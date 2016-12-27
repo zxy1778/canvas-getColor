@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">-->
+    <title>zxy的demo</title>
+    <link href="../dist/index.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="header">
+    <div class="switch">
+        <span>电机</span>
+        <div class="swt swt_close">
+            <div class="swt_btn"></div>
+        </div>
+    </div>
+    <div class="staus">
+        <span>设备状态</span>
+        <div class="staus_pot">在线</div>
+    </div>
+</div>
+<div class="container">
+    <canvas id="cav"></canvas>
+    <!--lamb_light-->
+    <div class="lamp">
+        <div class="lamp_top"></div>
+        <div class="lamp_mid"></div>
+        <div class="lamp_btm"></div>
+    </div>
+</div>
+<div class="infor">
+    <div class="temp">
+        <div class="info_box">
+            <i></i>
+            <div class="infor_cont">
+                <div class="num">35&#8451</div>
+                <div class="infor_name">温度</div>
+            </div>
+        </div>
+    </div>
+    <div class="humidity">
+        <div class="info_box">
+            <i></i>
+            <div class="infor_cont">
+                <div class="num">--%</div>
+                <div class="infor_name">湿度</div>
+            </div>
+        </div>
+    </div>
+    <div class="light">
+        <div class="info_box">
+            <i></i>
+            <div class="infor_cont">
+                <div class="num">--flux</div>
+                <div class="infor_name">光强</div>
+            </div>
+        </div>
+    </div>
+    <div class="hum">
+        <div class="info_box">
+            <i></i>
+            <div class="infor_cont">
+                <div class="num">--%</div>
+                <div class="infor_name">湿度</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<div class="control_box">
+    <!--control_in-->
+    <div class="control">
+        <div class="cont_item">
+            <i></i>
+            <div>白光</div>
+        </div>
+        <div class="cont_item">
+            <i></i>
+            <div>彩光</div>
+        </div>
+        <div class="cont_item">
+            <i></i>
+            <div>情景</div>
+        </div>
+        <div class="cont_item">
+            <i></i>
+            <div>定时</div>
+        </div>
+    </div>
+    <div class="white_light">
+        <div class="light_close">
+            <i></i>
+        </div>
+        <div class="light_item">
+            <i class="item1"></i>
+            <span>明暗度</span>
+            <input type="range" min="1" max="100" value="40" id="intensity"/>
+        </div>
+        <div class="light_item">
+            <i class="item2"></i>
+            <span>饱和度</span>
+            <input type="range" min="80" max="100" value="90" id="saturation"/>
+        </div>
+    </div>
+    <div class="colour_light">
+        <div class="light_close">
+            <i></i>
+        </div>
+        <div class="light_item2">
+            <i class="item1"></i>
+            <span>明暗度</span>
+            <input type="range" min="1" max="100" value="40" id="colour_intensity"/>
+        </div>
+        <div class="light_item2">
+            <i class="item2"></i>
+            <span>饱和度</span>
+            <input type="range" min="80" max="100" value="90" id="colour_saturation"/>
+        </div>
+    </div>
+</div>
+<script src="../plugin/jquery-1.11.1.min.js"></script>
+<script src="../dist/main.min.js"></script>
+</body>
+</html>

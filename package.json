@@ -1,0 +1,39 @@
+{
+  "name": "zxy",
+  "version": "1.0.0",
+  "description": "移动端的取色器",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zxy1778/-canvas-.git"
+  },
+  "keywords": [
+    "zxy44341778"
+  ],
+  "author": "zxy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zxy1778/-canvas-/issues"
+  },
+  "homepage": "https://github.com/zxy1778/-canvas-#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-preset-es2015": "^6.18.0",
+    "css-mqpacker": "^5.0.1",
+    "cssnano": "^3.9.1",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^6.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "jquery": "^3.1.1",
+    "postcss": "^5.2.6",
+    "postcss-import": "^9.0.0",
+    "postcss-px2rem": "^0.3.0"
+  }
+}
