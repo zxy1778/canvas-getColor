@@ -119,6 +119,5 @@ $.extend(getcolor.prototype, {
 
         },false)
     }
-
 });
 

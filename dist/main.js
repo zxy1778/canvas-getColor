@@ -157,7 +157,6 @@ $.extend(getcolor.prototype, {
             _this.opt.readColor(_this.opt.staur, _this.opt.inten, _this.color, _this.opt.isopen);
         }, false);
     }
-
 });
 'use strict';
 
@@ -203,9 +202,23 @@ $('.container').css("height", $(window).width() * 0.5);
 $('#cav').css("margin-left", -$('#cav').width() * 0.5);
 //开灯
 $(".lamp").click(function () {
-    isopen = !isopen;
-    changeLight(saturation, intensity, "#fff", isopen);
-    $(".control").toggleClass("control_in");
+
+    if (isWhite) {
+        isopen = !isopen;
+        if (isopen) {
+            changeLight(saturation, intensity, "#fff", isopen);
+            $(".control").addClass("control_in");
+            $(".infor").removeClass("info_close");
+            $(".colour_light").addClass("white_light_close").removeClass("white_light_open");
+            $(".white_light").addClass("white_light_close").removeClass("white_light_open");
+        } else {
+            changeLight(saturation, intensity, "#fff", isopen);
+            $(".control").removeClass("control_in");
+            $(".infor").removeClass("info_close");
+            $(".colour_light").addClass("white_light_close").removeClass("white_light_open");
+            $(".white_light").addClass("white_light_close").removeClass("white_light_open");
+        }
+    }
 });
 // 白灯
 $("#intensity").change(function () {
@@ -221,14 +234,14 @@ $("#saturation").change(function () {
     }
 });
 $(".white_light .light_close").click(function () {
-    $(".infor").toggleClass("info_close");
+    $(".infor").removeClass("info_close");
     $(".control").toggleClass("control_in");
     $(".white_light").toggleClass("white_light_close").toggleClass("white_light_open");
 });
 $(".cont_item").eq(0).click(function () {
     isWhite = true;
     changeLight(saturation, intensity, "#fff", isopen);
-    $(".infor").toggleClass("info_close");
+    $(".infor").addClass("info_close");
     $(".control").toggleClass("control_in");
     $(".white_light").removeClass("white_light_close").addClass("white_light_open");
 });
@@ -237,14 +250,15 @@ $(".cont_item").eq(1).click(function () {
 });
 // 彩灯
 $(".colour_light .light_close").click(function () {
+    isWhite = true;
     $("#cav").hide();
-    $(".infor").toggleClass("info_close");
+    $(".infor").removeClass("info_close");
     $(".control").toggleClass("control_in");
     $(".colour_light").toggleClass("white_light_close").toggleClass("white_light_open");
 });
 $(".cont_item").eq(1).click(function () {
     isWhite = false;
-    $(".infor").toggleClass("info_close");
+    $(".infor").addClass("info_close");
     $(".control").toggleClass("control_in");
     $(".colour_light").removeClass("white_light_close").addClass("white_light_open");
     changeLight(colour_satur, colour_int, 270, isopen);
