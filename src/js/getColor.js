@@ -5,7 +5,7 @@ var getcolor=function(option){
     this.opt=$.extend({},option,defaults);
     this.ctx = this.opt.ele[0].getContext('2d');
     this.radio = 40;
-    this.color = 0;
+    this.color = 270;
     this.init();
 };
 $.extend(getcolor.prototype, {
@@ -68,7 +68,7 @@ $.extend(getcolor.prototype, {
         var X = x-this.opt.ele.width()/2;
         var Y = y-this.opt.ele.height()/2;
         if (arguments[0] == undefined){
-            this.color = 0;
+            this.color = 270;
         }else{
             rad = Math.atan2(Y,X);
             var angle = rad*180/Math.PI;
@@ -76,11 +76,12 @@ $.extend(getcolor.prototype, {
                 angle = 180+angle+180;
             }
             this.color = angle;
+            rad += Math.PI/2
         }
         this.ctx.rotate(rad);
         this.ctx.beginPath();
         this.ctx.lineWidth=8;
-        this.ctx.arc(centerx-this.radio/2-18,0,this.radio/1.2,0,2*Math.PI,false);
+        this.ctx.arc(0,-centerx+(this.radio/2+18),this.radio/1.2,0,2*Math.PI,false);
         this.ctx.strokeStyle='#fff';
         this.ctx.fillStyle='hsla('+this.color+', 100%, 50%, 1)';
         this.ctx.stroke();

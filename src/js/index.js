@@ -61,29 +61,31 @@ $("#saturation").change(function () {
 $(".white_light .light_close").click(function () {
     $(".infor").toggleClass("info_close");
     $(".control").toggleClass("control_in");
-    $(".white_light").addClass("white_light_close");
+    $(".white_light").toggleClass("white_light_close").toggleClass("white_light_open");
 });
 $(".cont_item").eq(0).click(function () {
     isWhite = true;
+    changeLight(saturation,intensity,"#fff",isopen);
     $(".infor").toggleClass("info_close");
     $(".control").toggleClass("control_in");
-    $(".white_light").toggleClass("white_light_open");
+    $(".white_light").removeClass("white_light_close").addClass("white_light_open");
 });
 $(".cont_item").eq(1).click(function () {
     $("#cav").show();
 });
 // 彩灯
 $(".colour_light .light_close").click(function () {
+    $("#cav").hide();
     $(".infor").toggleClass("info_close");
     $(".control").toggleClass("control_in");
-    $(".colour_light").addClass("white_light_close");
+    $(".colour_light").toggleClass("white_light_close").toggleClass("white_light_open");
 });
 $(".cont_item").eq(1).click(function () {
     isWhite = false;
     $(".infor").toggleClass("info_close");
     $(".control").toggleClass("control_in");
-    $(".colour_light").toggleClass("white_light_open");
-    changeLight(colour_satur,colour_int,0,isopen);
+    $(".colour_light").removeClass("white_light_close").addClass("white_light_open");
+    changeLight(colour_satur,colour_int,270,isopen);
 });
 $("#colour_intensity").change(function () {
     if (isopen){
